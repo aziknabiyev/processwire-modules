@@ -1,0 +1,15 @@
+{
+    "file": "site\/templates\/inc\/map.inc",
+    "textdomain": "site--templates--inc--map-inc",
+    "translations": {
+        "5638a5568ab811dab82644058cec1128": {
+            "text": "Bizim xidm\u0259t \u0259razimiz"
+        },
+        "e3ba05539c51415543626dca0e5c1f15": {
+            "text": "Biziml\u0259 \u0259m\u0259da\u015fl\u0131q edin"
+        },
+        "0782097ca0f06da2dd198d9b1c53d807": {
+            "text": "Biz qlobal \u015f\u0259kild\u0259 f\u0259aliyy\u0259t g\u00f6st\u0259ririk"
+        }
+    }
+}

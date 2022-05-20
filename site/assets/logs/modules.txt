@@ -1,0 +1,62 @@
+2022-05-10 17:03:26	?	?	Saved module info caches
+2022-05-10 17:03:26	?	?	Found 2 module(s) missing file: FieldtypeNumber => /var/www/html/processwire/site/modules/FieldtypeNumber/FieldtypeNumber.module, ProcessPage => /var/www/html/processwire/site/modules/ProcessPage/ProcessPage.module
+2022-05-10 17:03:26	guest	http://localhost/processwire/en/http404/	Saved module info caches
+2022-05-10 17:03:26	guest	http://localhost/processwire/en/http404/	Found 2 module(s) missing file: FieldtypeNumber => /var/www/html/processwire/site/modules/FieldtypeNumber/FieldtypeNumber.module, ProcessPage => /var/www/html/processwire/site/modules/ProcessPage/ProcessPage.module
+2022-05-10 17:03:26	guest	http://localhost/processwire/en/http404/	Installed module 'ProcessRecentPages'
+2022-05-10 17:03:26	guest	http://localhost/processwire/en/http404/	Saved module info caches
+2022-05-10 17:03:26	guest	http://localhost/processwire/en/http404/	Found 2 module(s) missing file: FieldtypeNumber => /var/www/html/processwire/site/modules/FieldtypeNumber/FieldtypeNumber.module, ProcessPage => /var/www/html/processwire/site/modules/ProcessPage/ProcessPage.module
+2022-05-10 17:03:26	guest	http://localhost/processwire/en/http404/	Saved module info caches
+2022-05-10 17:03:26	guest	http://localhost/processwire/en/http404/	Found 2 module(s) missing file: FieldtypeNumber => /var/www/html/processwire/site/modules/FieldtypeNumber/FieldtypeNumber.module, ProcessPage => /var/www/html/processwire/site/modules/ProcessPage/ProcessPage.module
+2022-05-10 17:03:26	guest	http://localhost/processwire/en/http404/	Installed module 'AdminThemeUikit'
+2022-05-10 17:03:26	guest	http://localhost/processwire/en/http404/	Saved module info caches
+2022-05-10 17:03:26	guest	http://localhost/processwire/en/http404/	Found 2 module(s) missing file: FieldtypeNumber => /var/www/html/processwire/site/modules/FieldtypeNumber/FieldtypeNumber.module, ProcessPage => /var/www/html/processwire/site/modules/ProcessPage/ProcessPage.module
+2022-05-10 17:03:36	guest	http://localhost/processwire/	Saved module info caches
+2022-05-10 17:03:36	guest	http://localhost/processwire/	Found 2 module(s) missing file: FieldtypeNumber => /var/www/html/processwire/site/modules/FieldtypeNumber/FieldtypeNumber.module, ProcessPage => /var/www/html/processwire/site/modules/ProcessPage/ProcessPage.module
+2022-05-10 17:03:36	guest	http://localhost/processwire/	Installed module 'ProcessLogger'
+2022-05-10 17:03:36	guest	http://localhost/processwire/	Saved module info caches
+2022-05-10 17:03:36	guest	http://localhost/processwire/	Found 2 module(s) missing file: FieldtypeNumber => /var/www/html/processwire/site/modules/FieldtypeNumber/FieldtypeNumber.module, ProcessPage => /var/www/html/processwire/site/modules/ProcessPage/ProcessPage.module
+2022-05-10 17:03:36	guest	http://localhost/processwire/	Installed module 'InputfieldIcon'
+2022-05-10 17:03:36	guest	http://localhost/processwire/	Saved module info caches
+2022-05-10 17:03:36	guest	http://localhost/processwire/	Found 2 module(s) missing file: FieldtypeNumber => /var/www/html/processwire/site/modules/FieldtypeNumber/FieldtypeNumber.module, ProcessPage => /var/www/html/processwire/site/modules/ProcessPage/ProcessPage.module
+2022-05-10 17:11:21	?	?	Saved module info caches
+2022-05-10 17:11:21	?	?	Found 2 module(s) missing file: FieldtypeNumber => /var/www/html/processwire/site/modules/FieldtypeNumber/FieldtypeNumber.module, ProcessPage => /var/www/html/processwire/site/modules/ProcessPage/ProcessPage.module
+2022-05-10 17:11:28	?	?	Saved module info caches
+2022-05-10 17:11:28	?	?	Found 2 module(s) missing file: FieldtypeNumber => /var/www/html/processwire/site/modules/FieldtypeNumber/FieldtypeNumber.module, ProcessPage => /var/www/html/processwire/site/modules/ProcessPage/ProcessPage.module
+2022-05-10 17:11:28	?	?	Saved module info caches
+2022-05-10 17:11:28	?	?	Found 2 module(s) missing file: FieldtypeNumber => /var/www/html/processwire/site/modules/FieldtypeNumber/FieldtypeNumber.module, ProcessPage => /var/www/html/processwire/site/modules/ProcessPage/ProcessPage.module
+2022-05-11 12:03:14	admin	http://localhost/universal/admin/setup/field/edit?id=104	Installed module 'InputfieldTextTags'
+2022-05-11 12:03:14	admin	http://localhost/universal/admin/setup/field/edit?id=104	Saved module info caches
+2022-05-11 14:43:31	admin	http://localhost/universal/admin/setup/field/edit?id=107	Installed module 'InputfieldToggle'
+2022-05-11 14:43:32	admin	http://localhost/universal/admin/setup/field/edit?id=107	Saved module info caches
+2022-05-11 14:52:16	admin	http://localhost/universal/admin/setup/field/edit?id=108	Installed module 'InputfieldPageAutocomplete'
+2022-05-11 14:52:16	admin	http://localhost/universal/admin/setup/field/edit?id=108	Saved module info caches
+2022-05-11 14:53:07	admin	http://localhost/universal/admin/module/?reset=1	Saved module info caches
+2022-05-11 14:53:27	admin	http://localhost/universal/admin/module/	Installed module 'FieldtypeOptions'
+2022-05-11 14:53:27	admin	http://localhost/universal/admin/module/	Saved module info caches
+2022-05-11 14:53:41	admin	http://localhost/universal/admin/module/	Installed module 'InputfieldRepeater'
+2022-05-11 14:53:41	admin	http://localhost/universal/admin/module/	Installed module 'FieldtypeRepeater'
+2022-05-11 14:53:41	admin	http://localhost/universal/admin/module/	Saved module info caches
+2022-05-12 01:15:52	admin	http://localhost/universal/admin/module/	Installed module 'InputfieldMapMarker'
+2022-05-12 01:15:52	admin	http://localhost/universal/admin/module/	Installed module 'FieldtypeMapMarker'
+2022-05-12 01:15:52	admin	http://localhost/universal/admin/module/	Saved module info caches
+2022-05-16 10:07:11	admin	https://localhost/admin/module/?reset=1	Saved module info caches
+2022-05-16 10:07:27	admin	https://localhost/admin/module/	Installed module 'ProcessPageClone'
+2022-05-16 10:07:27	admin	https://localhost/admin/module/	Saved module info caches
+2022-05-16 10:14:40	admin	https://localhost/admin/module/?reset=1	Saved module info caches
+2022-05-16 10:14:43	admin	https://localhost/admin/module/	Installed module 'MarkupSEO'
+2022-05-16 10:14:43	admin	https://localhost/admin/module/	Saved module info caches
+2022-05-18 09:45:38	admin	https://universal.jis.az/admin/module/?reset=1	Saved module info caches
+2022-05-18 09:46:00	admin	https://universal.jis.az/admin/module/	Installed module 'Form'
+2022-05-18 09:46:00	admin	https://universal.jis.az/admin/module/	Saved module info caches
+2022-05-18 09:46:10	admin	https://universal.jis.az/admin/module/	Installed module 'Contact'
+2022-05-18 09:46:10	admin	https://universal.jis.az/admin/module/	Saved module info caches
+2022-05-18 09:47:46	admin	https://universal.jis.az/admin/module/?reset=1	Saved module info caches
+2022-05-18 09:48:19	admin	https://universal.jis.az/admin/module/?reset=1	Saved module info caches
+2022-05-18 15:17:12	admin	https://universal.jis.az/admin/module/?reset=1	Saved module info caches
+2022-05-18 15:20:12	admin	https://universal.jis.az/admin/module/?reset=1	Saved module info caches
+2022-05-18 15:20:14	admin	https://universal.jis.az/admin/module/	Installed module 'Mail'
+2022-05-18 15:20:14	admin	https://universal.jis.az/admin/module/	Saved module info caches
+2022-05-18 15:22:17	admin	https://universal.jis.az/admin/module/?reset=1	Saved module info caches
+2022-05-18 20:30:03	admin	https://universal.jis.az/admin/module/?reset=1	Saved module info caches
+2022-05-18 20:30:05	admin	https://universal.jis.az/admin/module/	Installed module 'Career'
+2022-05-18 20:30:06	admin	https://universal.jis.az/admin/module/	Saved module info caches

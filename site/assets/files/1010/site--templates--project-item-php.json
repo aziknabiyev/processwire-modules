@@ -1,0 +1,12 @@
+{
+    "file": "site\/templates\/project-item.php",
+    "textdomain": "site--templates--project-item-php",
+    "translations": {
+        "cae001514b44e5ff7ae521ca59428325": {
+            "text": "Layih\u0259nin \u015f\u0259kill\u0259ri"
+        },
+        "d9fab0332b9a769f00bba82196bcacba": {
+            "text": "N\u00f6vb\u0259ti layih\u0259"
+        }
+    }
+}

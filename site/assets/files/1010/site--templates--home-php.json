@@ -1,0 +1,33 @@
+{
+    "file": "site\/templates\/home.php",
+    "textdomain": "site--templates--home-php",
+    "translations": {
+        "e5d412bbd7b06552a06c6715d649b3bc": {
+            "text": "Daha \u00e7ox m\u0259lumat \u00fc\u00e7\u00fcn skrol et"
+        },
+        "5fe1be5197fd2407943699abb4e26828": {
+            "text": "\u018fsas\u0259n tikinti, d\u0259niz\u00e7ilik, neft v\u0259 qaz s\u0259nayesind\u0259 istifad\u0259 olunan materiallar\u0131n t\u0259dar\u00fck\u00fc il\u0259 m\u0259\u015f\u011ful oluruq"
+        },
+        "400683788b5cb0bebc6314d3a4cec694": {
+            "text": "Geni\u015f \u00e7e\u015fidli servisl\u0259r"
+        },
+        "56057af3f10e1f5e721e9330869d3499": {
+            "text": "R\u0259q\u0259ml\u0259r t\u0259cr\u00fcb\u0259mizd\u0259n dan\u0131\u015f\u0131r"
+        },
+        "0782097ca0f06da2dd198d9b1c53d807": {
+            "text": "Biz qlobal \u015f\u0259kild\u0259 f\u0259aliyy\u0259t g\u00f6st\u0259ririk"
+        },
+        "621514e1b818cafa92b50bca7e68977e": {
+            "text": "Biziml\u0259 \u0259laq\u0259"
+        },
+        "5042acac86385851ff2e112045321df0": {
+            "text": "Daha \u0259trafl\u0131"
+        },
+        "540f3a6338a4958f765233f6d3ab3187": {
+            "text": "U\u011furla tamamlanan layih\u0259l\u0259r"
+        },
+        "f5cbb07ab0130937d4054992afb1052f": {
+            "text": "B\u00fct\u00fcn proyektl\u0259r"
+        }
+    }
+}

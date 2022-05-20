@@ -1,0 +1,200 @@
+<?php namespace ProcessWire;
+
+
+use function MongoDB\BSON\toRelaxedExtendedJSON;
+
+class Form extends Process
+{
+    public static function getModuleinfo()
+    {
+        return [
+            'title' => 'Form',
+            'summary' => '',
+            'author' => '',
+            'version' => 1,
+            'icon'=>'cubes'
+        ];
+    }
+
+    public function db_install($fields,$table)
+    {
+        $sl='';
+        foreach($fields as $t)
+        {
+            $sl.="`$t` text NULL,";
+        }
+        $sql = "DROP TABLE IF EXISTS `$table`;
+                CREATE TABLE IF NOT EXISTS `$table` (
+                  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+                  `created` timestamp DEFAULT now(),
+                  `updated` timestamp DEFAULT now() on update now(),
+                  $sl
+                  PRIMARY KEY(`id`)
+                ) DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci";
+        $query = $this->database->prepare($sql);
+        $query->execute();
+    }
+
+    public function db_update($fields,$table)
+    {
+        $sl='';
+        $arr=[];
+        foreach($fields as $t)
+        {
+            $arr[]=" ADD `$t` text NULL ";
+        }
+        $sl=implode(',',$arr);
+        $sql="ALTER TABLE `$table` $sl ";
+        $query = $this->database->prepare($sql);
+        $query->execute();
+    }
+
+    public function submit($fields,$table,$subject,$emails)
+    {
+        $data=$this->check_data($fields,$table);
+        $this->add_to_database($data,$table,$subject,$emails);
+    }
+
+    public function check_data($fields,$table)
+    {
+        $sanitizer=wire('sanitizer');
+        $pages=wire('pages');
+        $input=wire('input');
+        $arr=[];
+
+        foreach($fields as $item)
+        {
+            $arr[$item]=htmlspecialchars(strip_tags($sanitizer->textarea($input->post($item))));
+        }
+
+        if(!$this->captchacheck()) die(json_encode(['error'=>'Captcha']));
+
+        return $arr;
+    }
+
+    public function add_to_database($data,$table,$subject,$emails)
+    {
+        $database=wire('database');
+        $pages=wire('pages');
+        $config=wire('config');
+        $columns=$this->collection_cols($data,'');
+        $values=$this->collection_cols($data,':');
+        $sth = $database->prepare('INSERT INTO '.$table.' ('.$columns.') VALUES('.$values.')');
+
+        foreach($data as $key=>$item)
+        {
+            $sth->bindValue(':'.$key,$item);
+        }
+        $sth->execute();
+
+        $mail=new \Mail();
+
+        $body=$this->mail_template($data);
+        $m_s=$mail->send($subject,$emails,$body);
+
+        die(json_encode(['success'=>'true','redirect'=>'none','mail'=>$m_s]));
+
+    }
+
+    public function mail_template($data)
+    {
+        $pages=wire('pages');
+        $mail_list=['item'=>'Səhifə','name'=>'Ad','surname'=>'Soyad','fullname'=>'Tam ad',
+            'phone'=>'Mobil nömrə','email'=>'Email','message'=>'Mövzu','file_url'=>'Fayl'];
+        $html='<ul>';
+        foreach ($data as $k=>$item){
+            if($k=='item') $html.="<li style=\"font-size:20px;\">".$mail_list[$k]." : {$pages->get($item)->title}</li>";
+            else if($k=='file_url') $html.="<li style=\"font-size:20px;\">".$mail_list[$k]." : {$this->link($item)}</li>";
+            else $html.="<li style=\"font-size:20px;\">".$mail_list[$k]." : {$item}</li>";
+        }
+        $html.='</ul>';
+        return $html;
+    }
+
+    public function link($file)
+    {
+        $config=wire('config');
+        $url=$_SERVER['SERVER_NAME'].$config->urls->assets.'uploads/'.$file;
+        return "<a target='_blank' href='https://$url'>download</a>";
+    }
+
+    public function collection_cols($data,$exp)
+    {
+        $arr=[];
+        foreach($data as $key=>$item)
+        {
+            array_push($arr,$exp.$key);
+        }
+        return implode($arr,',');
+    }
+
+    public function upload_file($name)
+    {
+        if(!$_FILES[$name]['name']) return '';
+
+        if(!$this->captchacheck()) die(json_encode(['error'=>'Captcha']));
+
+        $config=wire('config');
+        $input=wire('input');
+        $folder=time();
+        $file_extension_arr = array('doc','docx','pdf','jpg','jpeg','png') ;
+        $upload_path        = $config->paths->assets . "uploads/".$folder."/"; // tmp upload folder
+        $file_extensions    = $file_extension_arr;
+        $max_files          = 1;
+        $max_upload_size    = 2*1024*1024; // make sure PHP's upload and post max size is also set to a reasonable size
+        $overwrite          = false;
+
+
+        if(!is_dir($upload_path)) {
+            if(!wireMkdir($upload_path)) throw new WireException("No upload path!");
+        }
+
+        $new_str= wire('sanitizer')->text($_FILES[$name]['name']);
+        $file_field= $name;
+        $new_name = preg_replace('/\s+/', '_', $new_str);
+
+
+        $u = new WireUpload($file_field);
+        $u->setMaxFiles($max_files);
+        $u->setMaxFileSize($max_upload_size);
+        $u->setOverwrite($overwrite);
+        $u->setDestinationPath($upload_path);
+        $u->setValidExtensions($file_extensions);
+        $u->setName=$new_name;
+        // start the upload of the file
+        $files = $u->execute();
+
+        if($u->getErrors())
+        {
+            return '';
+        }
+        die(json_encode(['name'=>$name,'url'=>$folder.'/'.$u->validateFilename($new_name)]));
+    }
+
+
+    public function captchacheck()
+    {
+        define("V3C", '6LdJhvgfAAAAAOIV9nlnZFOF4uOiJDQ7jiSZG0qs');
+        $token = $_POST['g-recaptcha'];
+
+
+        // call curl to POST request
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL,"https://www.google.com/recaptcha/api/siteverify");
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query(array('secret' => V3C, 'response' => $token)));
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $response = curl_exec($ch);
+        curl_close($ch);
+        $arrResponse = json_decode($response, true);
+
+        // verify the response
+        if($arrResponse["success"] == true) {
+            return true;
+
+        } else {
+            return false;
+        }
+    }
+}
+

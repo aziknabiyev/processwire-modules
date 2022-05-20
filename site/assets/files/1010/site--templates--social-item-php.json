@@ -1,0 +1,12 @@
+{
+    "file": "site\/templates\/social-item.php",
+    "textdomain": "site--templates--social-item-php",
+    "translations": {
+        "898edc6c496712c48893eb3153754eef": {
+            "text": "Dig\u0259r m\u0259qal\u0259l\u0259r"
+        },
+        "97969c287f30c625bf4f6421f569dbfd": {
+            "text": "B\u00fct\u00fcn m\u0259qal\u0259l\u0259r"
+        }
+    }
+}

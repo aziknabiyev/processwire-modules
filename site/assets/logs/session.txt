@@ -1,0 +1,51 @@
+2022-05-10 19:18:12	admin	http://localhost/universal/admin/login/	Successful login for 'admin'
+2022-05-11 11:58:15	admin	http://localhost/universal/admin/login/	Successful login for 'admin'
+2022-05-11 14:43:01	admin	http://localhost/universal/admin/login/	Successful login for 'admin'
+2022-05-12 00:05:18	admin	http://localhost/universal/admin/login/	Successful login for 'admin'
+2022-05-12 11:01:14	admin	http://localhost/universal/admin/login/	Successful login for 'admin'
+2022-05-12 13:24:46	admin	http://localhost/universal/admin/login/	Successful login for 'admin'
+2022-05-12 16:18:59	admin	http://localhost/universal/admin/login/	Successful login for 'admin'
+2022-05-16 08:42:31	admin	http://localhost/admin/login/	Successful login for 'admin'
+2022-05-16 08:42:32	?	?	User 'admin' - Error: Session fingerprint changed (IP address or useragent) (IP: 172.71.12.136)
+2022-05-16 08:42:54	admin	https://localhost/admin/login/	Successful login for 'admin'
+2022-05-16 08:52:38	?	?	User 'admin' - Error: Session fingerprint changed (IP address or useragent) (IP: 172.71.12.137)
+2022-05-16 08:53:08	admin	https://localhost/admin/login/	Successful login for 'admin'
+2022-05-16 09:47:31	admin	https://localhost/admin/login/	Successful login for 'admin'
+2022-05-16 10:06:50	admin	https://localhost/admin/login/	Successful login for 'admin'
+2022-05-16 10:40:24	admin	https://localhost/admin/login/	Successful login for 'admin'
+2022-05-16 10:42:41	?	?	User 'admin' - Error: Session fingerprint changed (IP address or useragent) (IP: 172.71.12.145)
+2022-05-16 10:43:00	admin	https://localhost/admin/login/	Successful login for 'admin'
+2022-05-16 10:45:23	?	?	User 'admin' - Error: Session fingerprint changed (IP address or useragent) (IP: 172.71.12.145)
+2022-05-16 10:45:33	admin	https://localhost/admin/login/	Successful login for 'admin'
+2022-05-16 10:47:30	?	?	User 'admin' - Error: Session fingerprint changed (IP address or useragent) (IP: 172.71.12.149)
+2022-05-16 11:01:55	admin	https://localhost/admin/login/	Successful login for 'admin'
+2022-05-16 11:06:16	admin	https://localhost/admin/login/?id=1	Successful login for 'admin'
+2022-05-16 11:06:17	?	?	User 'admin' - Error: Session fingerprint changed (IP address or useragent) (IP: 172.71.12.149)
+2022-05-16 11:06:17	?	?	User 'admin' - Error: Session fingerprint changed (IP address or useragent) (IP: 172.71.12.145)
+2022-05-16 11:06:30	admin	https://localhost/admin/login/	Successful login for 'admin'
+2022-05-16 11:07:18	?	?	User 'admin' - Error: Session fingerprint changed (IP address or useragent) (IP: 172.71.12.137)
+2022-05-16 11:08:37	?	?	User 'admin' - Error: Session fingerprint changed (IP address or useragent) (IP: 172.71.12.145)
+2022-05-16 11:09:22	magi	https://localhost/admin/login/	Successful login for 'magi'
+2022-05-16 11:10:18	?	?	User 'magi' - Error: Session fingerprint changed (IP address or useragent) (IP: 172.71.12.149)
+2022-05-16 11:10:31	magi	https://localhost/admin/login/	Successful login for 'magi'
+2022-05-16 11:11:34	?	?	User 'magi' - Error: Session fingerprint changed (IP address or useragent) (IP: 172.71.12.149)
+2022-05-16 11:11:53	magi	https://localhost/admin/login/?id=1	Successful login for 'magi'
+2022-05-16 12:05:50	admin	https://universal.jis.az/admin/login/	Successful login for 'admin'
+2022-05-16 12:14:26	guest	https://universal.jis.az/admin/login/	Error: Failed login for 'admin' - Invalid password
+2022-05-16 12:14:29	admin	https://universal.jis.az/admin/login/	Successful login for 'admin'
+2022-05-17 09:21:05	magi	https://universal.jis.az/admin/login/	Successful login for 'magi'
+2022-05-17 09:42:28	admin	https://universal.jis.az/admin/login/	Successful login for 'admin'
+2022-05-17 11:58:12	admin	https://universal.jis.az/admin/login/	Successful login for 'admin'
+2022-05-17 12:38:53	admin	https://universal.jis.az/admin/login/	Successful login for 'admin'
+2022-05-18 07:03:48	admin	https://universal.jis.az/admin/login/	Successful login for 'admin'
+2022-05-18 08:56:18	admin	https://universal.jis.az/admin/login/	Successful login for 'admin'
+2022-05-18 09:09:14	admin	https://universal.jis.az/admin/login/?id=1	Successful login for 'admin'
+2022-05-18 09:45:27	admin	https://universal.jis.az/admin/login/	Successful login for 'admin'
+2022-05-18 10:46:38	admin	https://universal.jis.az/admin/login/	Successful login for 'admin'
+2022-05-18 15:03:11	admin	https://universal.jis.az/admin/login/	Successful login for 'admin'
+2022-05-18 15:15:52	admin	https://universal.jis.az/admin/login/	Successful login for 'admin'
+2022-05-18 19:03:47	admin	https://universal.jis.az/admin/login/	Successful login for 'admin'
+2022-05-19 06:17:36	admin	https://universal.jis.az/admin/login/	Successful login for 'admin'
+2022-05-19 08:09:15	admin	https://universal.jis.az/admin/login/	Successful login for 'admin'
+2022-05-19 08:12:22	admin	https://universal.jis.az/admin/login/	Successful login for 'admin'
+2022-05-19 11:31:47	admin	https://universal.jis.az/admin/login/	Successful login for 'admin'

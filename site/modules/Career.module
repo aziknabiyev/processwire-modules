@@ -1,0 +1,146 @@
+<?php namespace ProcessWire;
+
+
+class Career extends Process {
+
+    public $table='a_career';
+    public $fields=['item','name','surname','phone','email','file_url'];
+    public $add_fields=['fullname','phone'];
+
+    public static function getModuleinfo()
+    {
+        return [
+            'title' => 'Career',
+            'summary' => '',
+            'author' => '',
+            'version' => 1,
+            'icon'=>'cubes'
+        ];
+    }
+
+    public function create_table()
+    {
+        $form=new Form();
+        $form->db_install($this->fields,$this->table);
+    }
+
+    public function update_table()
+    {
+        $form=new Form();
+        $form->db_update($this->add_fields,$this->table);
+    }
+
+    public function send()
+    {
+        $pages=wire('pages');
+        $form=new Form();
+        $subject='Karyera';
+        $emails=($pages->get(1)->txt2) ? explode(';',$pages->get(1)->txt2) : [];
+        $form->submit($this->fields,$this->table,$subject,$emails);
+    }
+
+    public function ___execute()
+    {
+        $database=wire('database');
+        $input=wire('input');
+        $sanitizer=wire('sanitizer');
+        $config=wire('config');
+        $pages=wire('pages');
+        $config->styles->append("https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css");
+        $config->scripts->append("/site/modules/main.js?v=".time());
+        $begin=0;
+        $page_array=array();
+        $for_begin=0;
+        $page_link='';
+        $rowsCount=50;
+        $date_params=[];
+        $form=new Form();
+
+        $w_sql='';
+
+        if(isset($input->get->page))
+        {
+            $n1=$sanitizer->int($input->get->page);
+            if($n1<=0) $n1=1;
+            $begin=($n1-1)*$rowsCount;
+            $for_begin=$n1-1;
+        }
+
+        $take_data=$database->query("SELECT * FROM $this->table ". ($w_sql ? "WHERE $w_sql" : "")." ORDER BY id DESC LIMIT $rowsCount OFFSET $begin")->fetchAll();
+        $take_count=$database->query("SELECT * FROM $this->table ". ($w_sql ? "WHERE $w_sql" : "")."")->rowCount();
+        $time=$this->time_html($date_params,$page_link);
+
+        $info='';
+
+        if($input->get->delete_id){
+            $dl_id=$sanitizer->int($input->get->delete_id);
+            $gr=$database->prepare("DELETE FROM  $this->db_table WHERE id=?");
+            $gr->execute([$dl_id]);
+        }
+
+        $fields=$this->fields;
+        $fields[]='created';
+        $table=$this->modules->get("MarkupAdminDataTable");
+        $table->setEncodeEntities(false);
+        $table->headerRow($fields);
+
+        foreach($take_data as $item)
+        {
+            $table_arr=array();
+            foreach ($fields as $it){
+                if($it=='item') $table_arr[]=$pages->get($item[$it])->title;
+                else if($it=='file_url') $table_arr[]=$form->link($item[$it]);
+                else $table_arr[]=$item[$it];
+            }
+            $table->row($table_arr);
+        }
+
+        for($b=0;$b<($take_count/$rowsCount);$b++):
+            $page_array[]=($b+1);
+        endfor;
+        $pagination.= $this->my_Pagination($for_begin,$page_array,$take_count/$rowsCount,$page_link);
+        $out=$table->render();
+
+        return 'Sorğu sayı : '.$take_count.$time.$info.$out.$pagination;
+    }
+
+
+    public function my_Pagination($begin,$arr,$count,$link)
+    {
+        $html='<nav aria-label="Page navigation example"><ul class="pagination">';
+        if($begin<6)
+        {
+            foreach($arr as $k=>$item)
+            {
+                if($k<10)
+                {
+                    $cls='';
+                    if($k==$begin) $cls='active';
+                    $html.='<li class="page-item '.$cls.'"><a class="page-link" href="?page='.$item.$link.'">'.$item.'</a></li>';
+                }
+            }
+        }
+        else if($begin>=6 && $begin<$count)
+        {
+            for($i=($begin-4);$i<($begin+10);$i++)
+            {
+                $cls='';
+                if($i==$begin) $cls='active';
+                $item=$arr[$i];
+                if($item) $html.='<li class="page-item '.$cls.'"><a class="page-link" href="?page='.$item.$link.'">'.$item.'</a></li>';
+            }
+        }
+        $html.='</ul></nav>';
+        return $html;
+    }
+    public function time_html($params,$link)
+    {
+        $time='<form action="" method="GET" style="float:right;margin-left:10px;"><input type="hidden" name="page" value="1"/><input type="submit" value="show all"/></form>';
+        $time.='<form action="" method="GET" style="float:right;"><input type="date" value="'.$params[0].'" name="vaxt1"/> - <input type="date" value="'.$params[1].'" name="vaxt2"/><input type="submit" value="show"/></form>';
+        $time.='<form action="" method="GET" style="float:right;"><input type="hidden" value="'.date('Y-m-d').'" name="vaxt1"/><input type="hidden" value="'.date('Y-m-d',strtotime('tomorrow')).'" name="vaxt2"/><input style="margin-right:10px;" type="submit" value="Today"/></form>';
+        $time.='<form action="" method="GET" style="float:right;"><input type="hidden" value="'.date('Y-m-d',strtotime('last monday')).'" name="vaxt1"/><input type="hidden" value="'.date('Y-m-d',strtotime('next sunday')).'" name="vaxt2"/><input style="margin-right:10px;" type="submit" value="Week"/></form>';
+        $time.='<form action="" method="GET" style="float:right;"><input type="hidden" value="'.date('Y-m-d',strtotime('first day of this month')).'" name="vaxt1"/><input type="hidden" value="'.date('Y-m-d',strtotime('last day of this month')).'" name="vaxt2"/><input style="margin-right:10px;" type="submit" value="Month"/></form>';
+        return $time;
+    }
+
+}

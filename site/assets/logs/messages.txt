@@ -1,0 +1,18 @@
+2022-05-11 14:45:16	admin	http://localhost/universal/admin/setup/field/edit?id=107	Populated initial created/modified dates for 'img1'
+2022-05-11 14:46:08	admin	http://localhost/universal/admin/setup/template/removeFields	Deleted field "headline" data in 0 row(s) from 0 page(s) using template "about". [page-by-page]
+2022-05-11 15:15:04	admin	http://localhost/universal/admin/page/edit/?id=1021	Populated initial created/modified dates for 'img2'
+2022-05-12 13:28:11	admin	http://localhost/universal/admin/setup/template/removeFields	Deleted field "headline" data in 1 row(s) from 1 page(s) using template "home". [page-by-page]
+2022-05-12 13:28:29	admin	http://localhost/universal/admin/page/edit/?id=1	Populated initial created/modified dates for 'file'
+2022-05-12 16:19:54	admin	http://localhost/universal/admin/page/edit/?id=1020	Populated initial created/modified dates for 'image'
+2022-05-16 08:45:26	admin	https://localhost/admin/setup/template/removeFields	Deleted field "body" data in 1 row(s) from 1 page(s) using template "home". [page-by-page]
+2022-05-16 08:45:27	admin	https://localhost/admin/setup/template/removeFields	Deleted field "sidebar" data in 1 row(s) from 1 page(s) using template "home". [page-by-page]
+2022-05-16 08:47:49	admin	https://localhost/admin/page/sort/	Updated sort for 8 pages
+2022-05-16 08:47:54	admin	https://localhost/admin/page/sort/	Updated sort for 5 pages
+2022-05-16 08:47:57	admin	https://localhost/admin/page/sort/	Updated sort for 5 pages
+2022-05-16 08:48:01	admin	https://localhost/admin/page/sort/	Updated sort for 2 pages
+2022-05-16 08:48:04	admin	https://localhost/admin/page/sort/	Updated sort for 2 pages
+2022-05-16 12:35:29	admin	https://universal.jis.az/admin/setup/template/removeFields	Deleted field "img2" data in 1 row(s) from 1 page(s) using template "project-item". [page-by-page]
+2022-05-17 11:58:24	magi	https://universal.jis.az/admin/page/sort/	Updated sort for 7 pages
+2022-05-18 15:28:47	admin	https://universal.jis.az/admin/page/sort/	Updated sort for 4 pages
+2022-05-19 08:18:44	admin	https://universal.jis.az/admin/setup/template/removeFields	Deleted field "services" data in 1 row(s) from 1 page(s) using template "news-item". [page-by-page]
+2022-05-19 08:38:25	admin	https://universal.jis.az/admin/page/sort/	Updated sort for 1 pages
