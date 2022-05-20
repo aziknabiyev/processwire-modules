@@ -13,16 +13,16 @@ class Mail extends \ProcessWire\Process
         ];
     }
 
-    public function send($subject='Test',$emails=['azer@jis.az'],$content='Test')
+    public function send($subject='Test',$emails=['test@gmail'],$content='Test')
     {
         $transport = (new Swift_SmtpTransport('smtp.gmail.com', 587,'tls'))
-            ->setUsername('universalsend.2022@gmail.com')
-            ->setPassword('<gkL,:6erwQL=4s_');
+            ->setUsername('test')
+            ->setPassword('test');
 
         $mailer = new Swift_Mailer($transport);
 
         $message = (new Swift_Message($subject))
-            ->setFrom(['universalsend.2022@gmail.com' => 'Universal '.$subject])
+            ->setFrom(['test' => 'Universal '.$subject])
             ->setTo($emails)
             ->setBody($content)
             ->setContentType("text/html");

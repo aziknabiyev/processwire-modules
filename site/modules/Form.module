@@ -174,7 +174,7 @@ class Form extends Process
 
     public function captchacheck()
     {
-        define("V3C", '6LdJhvgfAAAAAOIV9nlnZFOF4uOiJDQ7jiSZG0qs');
+        define("V3C", 'key');
         $token = $_POST['g-recaptcha'];
 
 
